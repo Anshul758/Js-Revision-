@@ -35,3 +35,6 @@ const myFunction = function(){
 console.log(typeof heros) // typeof array is object
 console.log(typeof myFunction) // typeof function is function
 console.log( typeof obj) // typeof is object
+
+
+// Note : Javascript is a dynamically typed language because you dont have to specify the data type of a variable when you declare it.
