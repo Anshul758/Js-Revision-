@@ -38,3 +38,41 @@ console.log( typeof obj) // typeof is object
 
 
 // Note : Javascript is a dynamically typed language because you dont have to specify the data type of a variable when you declare it.
+
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++
+
+
+// Stack (primitive), Heap (Non-Primitive)
+
+// stack - whenever you declare a primitive data type it gets stored in stack memory and upon declaring you get a copy of value;
+
+let myName = "Anshul";
+
+let anotherName = myName;
+anotherName = "Dedsec";
+
+console.log(myName);
+console.log(anotherName)
+
+// as you can see above we assigned another name with my name and upon changing another name value myname value didn't get change
+// because primitive data type gets stored in stack memory and when we declared anothername value with myname.
+//  value given to anothername was a copy of myname instead of orignal reference
+
+// Heap Memory - whenever we declare a non primitive data type the value of it's gets stored in heap memory 
+
+let userOne = {
+    name : "anshul",
+    email : "abc@gmail.com"
+}
+
+let userTwo = userOne;
+
+userTwo.email = "xyz@gmail.com";
+
+console.log(userOne.email);
+console.log(userTwo.email);
+
+// as we can see in heap's case when we declared 2nd object giving first obj as value upon changing 2nd obj's email 1st obj's email also got changed
+// because in heap memory it gives value as reference so changing one will change other also
