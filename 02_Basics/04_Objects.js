@@ -44,3 +44,23 @@ console.log(Object.entries(tinderUser)); // this will make a pair of key n value
 
 // if we want to check if obect has that key 
 console.log(Object.hasOwnProperty('check')) // true or false it return us
+
+
+// destructuring in objects
+
+const course = {
+    courseName: "100x dev",
+    price: "5999",
+    courseInstructor: "Anshul"
+}
+
+const {courseInstructor: check} = course; // using this we dont have to again n again write course.courseInstructor 
+// to fetch the value we can just use this directly {courseInstructor: xyz} we can give a name by our choice also
+console.log(check)
+
+// json
+// {
+//     "name": "anshul",
+//     "courseName": "testing"
+// };
+
