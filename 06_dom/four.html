@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOm manipulation</title>
+</head>
+<body style="background-color: #212121; color: #ffff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    const addLanguage = (langName) =>{
+        const li = document.createElement("li");
+        li.innerHTML = `${langName}`; // here we are traversing the whole tree cause we are assinging using property name
+        document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("Python")
+    addLanguage("Typescript")
+
+    // optimized way
+    const addOptiLanguage = (langName) => {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName)); // using this we are not traversing the whole tree so less expesive
+        document.querySelector(".language").appendChild(li);
+    }
+    addOptiLanguage("goLang")
+
+    //edit
+
+    const selected = document.querySelector("li:nth-child(2)")
+    const newLi = document.createElement("li");
+    newLi.textContent = "Mojo";
+    selected.replaceWith(newLi)
+
+    // remove
+
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove()
+</script>
+</html>
