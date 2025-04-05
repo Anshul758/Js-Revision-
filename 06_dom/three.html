@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how to create dom element manually</title>
+</head>
+<body style="background-color: #212121; color: #ffff;">
+    
+</body>
+<script>
+    const div = document.createElement("div");
+    console.log(div)
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    //if we want to set some custom attribute
+    div.setAttribute("title", "Learning Dom")
+    div.style.backgroundColor = "green";
+    // div.innerText = "Dom and features"
+    // when we directly set the property it takes 2 rounds fist it fetches the original value then it sets the new value.
+    //  and setattribute directly sets the value without fetching
+    const addText = document.createTextNode("Dom and features");
+    div.appendChild(addText);
+
+    document.body.appendChild(div) // this command add the element in our dom 
+
+</script>
+</html>
