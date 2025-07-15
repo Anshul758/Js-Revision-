@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="fetchBtn">Fetch Data</button>
+    <div id="cardContainer"></div>
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/hiteshchoudhary';
+    const fetchBtn = document.getElementById('fetchBtn');
+    const xhr = new XMLHttpRequest();
+    fetchBtn.addEventListener('click',()=>{
+        xhr.open('GET', requestURL);
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText);
+                makeCard(data);
+            }
+        }
+        xhr.send();
+    });
+    
+
+    const makeCard = (data) => {
+        const card = document.createElement('div');
+        const cardContainer = document.getElementById('cardContainer');
+        card.className = "card";
+        card.innerHTML = `
+                <img src="${data.avatar_url}" alt="${data.name}">
+                <h2>${data.name}</h2>
+            `;
+        cardContainer.innerHTML = "";
+        cardContainer.appendChild(card);
+    }
+</script>
+</html>
